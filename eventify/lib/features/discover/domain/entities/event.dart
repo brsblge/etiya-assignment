@@ -1,25 +1,20 @@
 import 'package:equatable/equatable.dart';
 
-import 'attendee.dart';
-
 class Event extends Equatable {
   const Event({
     required this.name,
-    required this.date,
     required this.address,
-    required this.attendees,
+    required this.date,
   });
 
   final String name;
-  final DateTime date;
   final String address;
-  final List<Attendee> attendees;
+  final DateTime date;
 
   @override
   List<Object?> get props => [
         name,
-        date,
         address,
-        attendees,
+        date,
       ];
 }

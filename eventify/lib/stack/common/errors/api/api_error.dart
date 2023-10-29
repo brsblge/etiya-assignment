@@ -6,7 +6,7 @@ import '../../models/failure.dart';
 import 'api_error_type.dart';
 
 class ApiError extends Failure {
-  ApiError._internal({
+  const ApiError._internal({
     required this.errorType,
     required super.message,
   });

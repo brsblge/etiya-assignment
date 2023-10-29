@@ -1,22 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'attendee_model.dart';
-
 part 'event_model.g.dart';
 
 @JsonSerializable()
 class EventModel {
   EventModel({
     required this.name,
-    required this.date,
     required this.address,
-    required this.attendees,
+    required this.date,
   });
 
   final String? name;
-  final DateTime? date;
   final String? address;
-  final List<AttendeeModel>? attendees;
+  final DateTime? date;
 
   factory EventModel.fromJson(Map<String, dynamic> json) =>
       _$EventModelFromJson(json);

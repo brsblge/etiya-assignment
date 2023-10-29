@@ -74,7 +74,7 @@ abstract class UseCase<TInput, TOutput extends Object, TEvent>
     _isRunning = true;
     final result = await _cancellableOperation.valueOrCancellation(
       Result<TOutput, Failure>.failure(
-        Failure(message: 'Use case is cancelled.'),
+        const Failure(message: 'Use case is cancelled.'),
       ),
     );
     cancelToken.refresh();

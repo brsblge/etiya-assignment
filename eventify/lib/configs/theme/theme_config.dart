@@ -64,7 +64,7 @@ abstract class _Colors {
   static const backgroundSecondary = Color(0xFFF9F9F9);
   // Text colors
   static const textPrimary = Color(0xFF000000);
-  static const textSecondary = Color(0xFF515353);
+  static const textSecondary = Color(0xFFE58E1A);
   static const textDisabled = Color(0xFF9B9B9B);
   // Others
   static const error = Color(0xFFB50202);
