@@ -1,5 +1,6 @@
 {
     "title_app": "Eventify",
     "title_discover": "Keşfet",
-    "title_settings": "Ayarlar"
+    "title_settings": "Ayarlar",
+    "error_fetch_events": "Etkinlikler yüklenirken hata meydana geldi."
 }

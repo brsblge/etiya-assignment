@@ -27,9 +27,9 @@ import 'controlled_view.dart';
 ///   }
 ///
 ///   // Method to be triggered by the corresponding view.
-///   void foo() async {
+///   void foo() {
 ///     context.read<FooCubit>().doSomething();
-///     await routeManager.goRoute(context, 'exampleRoute');
+///     routeManager.goRoute(context, 'exampleRoute');
 ///   }
 /// }
 /// ```

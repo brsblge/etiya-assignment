@@ -51,7 +51,7 @@ abstract class DependencyConfig {
 
   static void _registerCubits() {
     locator.registerFactory(
-      () => EventCubit(),
+      () => EventCubit(locator()),
     );
   }
 
