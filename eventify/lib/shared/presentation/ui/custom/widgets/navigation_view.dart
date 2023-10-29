@@ -261,13 +261,11 @@ class NavigationItem {
     required this.label,
     this.icon,
     this.imageIcon,
-    this.keepAlive = false,
     required this.pageBuilder,
   });
 
   final String label;
   final IconData? icon;
   final String? imageIcon;
-  final bool keepAlive;
   final Widget Function() pageBuilder;
 }

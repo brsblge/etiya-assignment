@@ -52,7 +52,7 @@ import 'controlled_view.dart';
 /// See also:
 ///
 /// * [ControlledView], a base to components that construct views.
-abstract class Controller {
+abstract class Controller<TParams extends Object> {
   Controller(
     this.logger,
     this.localizor,
@@ -80,14 +80,14 @@ abstract class Controller {
   @protected
   late BuildContext context;
 
-  /// Optional parameters that can be passed during navigation.
-  @protected
-  late Object? params;
-
   /// An interface that is implemented by the corresponding view's state
   /// to be used by controllers such as AnimationController, TabController etc.
   @protected
   late TickerProvider vsync;
+
+  /// Optional parameters that can be passed during navigation.
+  @protected
+  TParams? params;
 
   /// Indicates if the corresponding view is activated.
   @protected

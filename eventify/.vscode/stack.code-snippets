@@ -18,34 +18,6 @@
         ],
         "description": "Read Controller"
     },
-    "DoubleBlocBuilder": {
-        "prefix": "doublebloc",
-        "body": [
-            "DoubleBlocBuilder<${1:SubjectA}Cubit, $1State, ${2:SubjectB}Cubit,$2State>(",
-            "\tbuilder: (context, stateA, stateB) {",
-            "\t\treturn ${3:Container()};",
-            "\t},",
-            "),"
-        ],
-        "description": "DoubleBlocBuilder"
-    },
-    "DoubleBlocConsumer": {
-        "prefix": "doubleconsumer",
-        "body": [
-            "DoubleBlocConsumer<${1:SubjectA}Cubit, $1State, ${2:SubjectB}Cubit,$2State>(",
-            "\tlistenerA: (context, state) {",
-            "\t\t// TODO: implement listenerA",
-            "\t},",
-            "\tlistenerB: (context, state) {",
-            "\t\t// TODO: implement listenerB",
-            "\t},",
-            "\tbuilder: (context, stateA, stateB) {",
-            "\t\treturn ${3:Container()};",
-            "\t},",
-            "),"
-        ],
-        "description": "DoubleBlocConsumer"
-    },
     "Helpers": {
         "prefix": "helpers",
         "body": [

@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../configs/localization/localization_config.dart';
 import '../configs/route/route_config.dart';
+import '../features/discover/presentation/cubits/event_cubit.dart';
 import '../stack/base/data/local_storage.dart';
+import '../stack/core/ioc/service_locator.dart';
 import '../stack/core/localization/dynamic_localization.dart';
 import '../stack/core/localization/localizor.dart';
 import '../stack/core/logging/logger.dart';
@@ -88,25 +90,32 @@ class _MaterialApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateTitle: (_) => localizor.tr('title_app'),
-      // Localization
-      localizationsDelegates: localizor.getLocalizationDelegates(context),
-      supportedLocales: localizor.getSupportedLocales(context),
-      locale: localizor.getLocale(context),
-      // Theme
-      theme: theme,
-      darkTheme: darkTheme,
-      // Navigation
-      onGenerateRoute: routeManager.generator,
-      initialRoute: RouteConfig.mainRoute,
-      builder: _buildApp,
+    return MultiBlocProvider(
+      providers: _buildCubitProviders(),
+      child: MaterialApp(
+        onGenerateTitle: (_) => localizor.tr('title_app'),
+        // Localization
+        localizationsDelegates: localizor.getLocalizationDelegates(context),
+        supportedLocales: localizor.getSupportedLocales(context),
+        locale: localizor.getLocale(context),
+        // Theme
+        theme: theme,
+        darkTheme: darkTheme,
+        // Navigation
+        onGenerateRoute: routeManager.generator,
+        initialRoute: RouteConfig.mainRoute,
+        builder: _buildApp,
+      ),
     );
   }
 
   // Helpers
   List<BlocProvider> _buildCubitProviders() {
-    return [];
+    return [
+      BlocProvider<EventCubit>(
+        create: (context) => locator<EventCubit>(),
+      ),
+    ];
   }
 
   Widget _buildApp(BuildContext context, Widget? child) {

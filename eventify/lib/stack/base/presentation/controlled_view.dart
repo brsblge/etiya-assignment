@@ -12,7 +12,7 @@ import 'controller_provider.dart';
 /// Every page/sub-page should extend this class as an example as below.
 ///
 /// ```dart
-/// class FooPage extends ControlledView<FooController> {
+/// class FooPage extends ControlledView<FooController, Object> {
 ///   FooPage({super.key});
 ///
 ///   @override
@@ -41,15 +41,15 @@ import 'controller_provider.dart';
 /// See also:
 ///
 /// * [Controller], a base to components that hold presentation logic.
-abstract class ControlledView<TController extends Controller>
-    extends StatefulWidget {
+abstract class ControlledView<TController extends Controller<TParams>,
+    TParams extends Object> extends StatefulWidget {
   ControlledView({
     super.key,
     required this.params,
   }) : controller = locator<TController>();
 
   /// Optional parameters that can be passed during navigation.
-  final Object? params;
+  final TParams? params;
 
   /// Controller of this view. It is to be used as a presentation logic holder.
   late final TController controller;
@@ -181,17 +181,17 @@ class _ControlledViewState<TController extends Controller>
 
   final Controller _controller;
   final Widget Function(BuildContext context) buildView;
-  final VoidCallback onActivate;
-  final VoidCallback onInitState;
-  final VoidCallback onPostInitState;
-  final VoidCallback onPostBuild;
-  final VoidCallback onResume;
-  final VoidCallback onVisible;
-  final VoidCallback onHidden;
-  final VoidCallback onPause;
-  final VoidCallback onDispose;
-  final VoidCallback onDetach;
-  final VoidCallback onDeactivate;
+  final void Function() onActivate;
+  final void Function() onInitState;
+  final void Function() onPostInitState;
+  final void Function() onPostBuild;
+  final void Function() onResume;
+  final void Function() onVisible;
+  final void Function() onHidden;
+  final void Function() onPause;
+  final void Function() onDispose;
+  final void Function() onDetach;
+  final void Function() onDeactivate;
 
   @override
   bool get wantKeepAlive => _controller.keepViewAlive;
