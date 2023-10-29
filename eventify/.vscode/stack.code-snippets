@@ -1,0 +1,58 @@
+{
+    "SubView": {
+        "prefix": "subview",
+        "body": [
+            "class _${1:} extends SubView<${2:}> {",
+            "\t@override",
+            "\tWidget buildView(BuildContext context, ${2:} controller) {",
+            "\t\treturn const Placeholder();",
+            "\t}",
+            "}"
+        ],
+        "description": "Create SubView"
+    },
+    "Read Controller": {
+        "prefix": "readcontroller",
+        "body": [
+            "context.readController<${1:ControllerType}>()",
+        ],
+        "description": "Read Controller"
+    },
+    "DoubleBlocBuilder": {
+        "prefix": "doublebloc",
+        "body": [
+            "DoubleBlocBuilder<${1:SubjectA}Cubit, $1State, ${2:SubjectB}Cubit,$2State>(",
+            "\tbuilder: (context, stateA, stateB) {",
+            "\t\treturn ${3:Container()};",
+            "\t},",
+            "),"
+        ],
+        "description": "DoubleBlocBuilder"
+    },
+    "DoubleBlocConsumer": {
+        "prefix": "doubleconsumer",
+        "body": [
+            "DoubleBlocConsumer<${1:SubjectA}Cubit, $1State, ${2:SubjectB}Cubit,$2State>(",
+            "\tlistenerA: (context, state) {",
+            "\t\t// TODO: implement listenerA",
+            "\t},",
+            "\tlistenerB: (context, state) {",
+            "\t\t// TODO: implement listenerB",
+            "\t},",
+            "\tbuilder: (context, stateA, stateB) {",
+            "\t\treturn ${3:Container()};",
+            "\t},",
+            "),"
+        ],
+        "description": "DoubleBlocConsumer"
+    },
+    "Helpers": {
+        "prefix": "helpers",
+        "body": [
+            "// Helpers",
+            "${1:void} _${2:}(${3:}) {\n\t${4:}\n}",
+            "// - Helpers"
+        ],
+        "description": "Helpers Tag"
+    },
+}
