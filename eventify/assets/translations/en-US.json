@@ -1,0 +1,7 @@
+{
+    "title_app": "Eventify",
+    "title_discover": "Discover",
+    "title_settings": "Settings",
+    "error_fetch_events": "An error occurred while fetching the events.",
+    "text_event_date": "Event Date: {}"
+}

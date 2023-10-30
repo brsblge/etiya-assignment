@@ -1,0 +1,30 @@
+{
+    "SubView": {
+        "prefix": "subview",
+        "body": [
+            "class _${1:} extends SubView<${2:}> {",
+            "\t@override",
+            "\tWidget buildView(BuildContext context, ${2:} controller) {",
+            "\t\treturn const Placeholder();",
+            "\t}",
+            "}"
+        ],
+        "description": "Create SubView"
+    },
+    "Read Controller": {
+        "prefix": "readcontroller",
+        "body": [
+            "context.readController<${1:ControllerType}>()",
+        ],
+        "description": "Read Controller"
+    },
+    "Helpers": {
+        "prefix": "helpers",
+        "body": [
+            "// Helpers",
+            "${1:void} _${2:}(${3:}) {\n\t${4:}\n}",
+            "// - Helpers"
+        ],
+        "description": "Helpers Tag"
+    },
+}
